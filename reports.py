@@ -70,7 +70,7 @@ def when_was_top_sold_fps(file_name):
 
     int_copies_list = [float(i) for i in copies_list]
     best_seller_index = int_copies_list.index(max(int_copies_list))
-    answer = str(fps_list[best_seller_index][2])
+    answer = int(fps_list[best_seller_index][2])
     return answer
 
 
