@@ -47,7 +47,7 @@ def sort_abc(file_name):
     game_list = []
     for games in range(count_games(file_name)):
         game_list.append(file_filtering(file_name)[games][0])
-    return sorted(game_list)
+    return sorted(game_list, key=str.lower)
 
 
 def get_genres(file_name):
