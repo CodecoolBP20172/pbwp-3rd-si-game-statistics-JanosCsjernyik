@@ -70,9 +70,26 @@ def get_game(file_name, title):
             return [game[0], float(game[1]), int(game[2]), game[3], game[4][0:length-1]]
     else:
         raise ValueError("There is no game named like that in the file!")
-        
 
 
+def count_grouped_by_genre(file_name):
+    genre_list = []
+    genre_dic = {}
+    for game in file_filtering(file_name):
+        genre_list.append(game[3])
+    for genre in genre_list:
+        if genre in genre_dic.keys():
+            genre_dic[genre] += 1
+        else:
+            genre_dic[genre] = 1
+    return genre_dic
 
-#print(get_game("game_stat.txt","Half-Life"))
+
+def get_date_ordered(file_name):
+    games_dict = {}
+    for game in file_filtering(file_name):
+        games_dict[game[0]] = int(game[2])
+    ordered_by_dates = [item[0] for item in sorted(games_dict.items(), key=lambda kv: (-kv[1], kv[0]))]
+    return ordered_by_dates
+
 # Report functions

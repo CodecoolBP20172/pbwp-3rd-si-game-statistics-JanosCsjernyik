@@ -1,9 +1,8 @@
-#from reports import *
-#print("a")
-#print(count_games("game_stat.txt"))
-#txt = open("exportfile.txt","w")
-#txt.write("a")
-
-with open("exportfile.txt","w") as txt:
-    txt.write("A")
-    txt.close()
+try:
+    dividend = int(input("Please enter the dividend: "))
+    divisor = int(input("Please enter the divisor: "))
+    print("%d / %d = %f" % (dividend, divisor, dividend/divisor))
+except ValueError:
+    print("The divisor and dividend have to be numbers!")
+except ZeroDivisionError:
+    print("The dividend may not be zero!")

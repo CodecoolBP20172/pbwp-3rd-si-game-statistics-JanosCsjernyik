@@ -8,7 +8,9 @@ def export(file_name, output_file):
                      get_selling_avg(file_name),
                      count_longest_title(file_name),
                      get_date_avg(file_name),
-                     get_game(file_name, "Half-Life 2")]
+                     get_game(file_name, "Half-Life 2"),
+                     count_grouped_by_genre(file_name),
+                     get_date_ordered(file_name)]
 
     path = "/home/janos/codecool/python/3SI/pbwp-3rd-si-game-statistics-JanosCsjernyik/part2/" + output_file
     with open(output_file, "w") as txt:
